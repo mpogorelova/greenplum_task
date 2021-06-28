@@ -14,7 +14,11 @@
 
 <h3>Clients list</h3>
 {% for client in clients %}
-<div>{{ client.name }}&nbsp;<i>{{ client.agreement }}</i></div>
+<div>{{ client.name }}&nbsp;
+     {% for agreement in client.agreements %}
+    <i>{{ agreement.title }}</i>
+     {% endfor %}
+</div>
 {% endfor %}
 </body>
 </html>
